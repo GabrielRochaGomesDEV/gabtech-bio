@@ -1,0 +1,1407 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --bg: #080a0d;
+
+    --card: #101318;
+
+    --card-2: #14181e;
+
+    --blue: #6cb4df;
+
+    --blue-strong: #3f98c9;
+
+    --white: #f7f9fb;
+
+    --muted: #8f98a3;
+
+    --line: rgba(255, 255, 255, 0.08);
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(108, 180, 223, 0.18),
+            transparent 34%
+        ),
+
+        var(--bg);
+
+    color: var(--white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+    color: inherit;
+}
+
+
+
+/* =========================================
+   LUZES DO FUNDO
+========================================= */
+
+.glow {
+
+    position: fixed;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    pointer-events: none;
+
+    opacity: 0.18;
+
+}
+
+
+.glow-one {
+
+    background: var(--blue);
+
+    top: 15%;
+
+    left: -180px;
+
+}
+
+
+.glow-two {
+
+    background: #1877b9;
+
+    right: -180px;
+
+    bottom: 10%;
+
+}
+
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.app {
+
+    width: min(100%, 560px);
+
+    margin: auto;
+
+    padding:
+
+        26px
+        16px
+        35px;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+
+/* =========================================
+   PERFIL
+========================================= */
+
+.profile {
+
+    text-align: center;
+
+    padding:
+
+        10px
+        0
+        24px;
+
+}
+
+
+.logo-wrap {
+
+    width: 400px;
+
+    height: 250px;
+
+    margin:
+
+        0
+        auto
+        14px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #303038;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(0, 0, 0, 0.35);
+
+}
+
+
+.logo-wrap img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.profile h1 {
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+
+    font-weight: 900;
+
+}
+
+
+.role {
+
+    color: var(--muted);
+
+    margin-top: 5px;
+
+    font-size: 16px;
+
+}
+
+
+.pill {
+
+    width: fit-content;
+
+    margin: 14px auto 0;
+
+    padding: 8px 13px;
+
+    border:
+
+        1px solid
+        rgba(108, 180, 223, 0.25);
+
+    background:
+
+        rgba(108, 180, 223, 0.07);
+
+    color: #b9ddf0;
+
+    border-radius: 99px;
+
+    font-size: 12px;
+
+}
+
+
+.pill b {
+
+    margin: 0 5px;
+
+    color: #55798e;
+
+}
+
+
+
+/* =========================================
+   BOTÕES RÁPIDOS
+========================================= */
+
+.quick-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 9px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.quick {
+
+    text-decoration: none;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 17px;
+
+    padding: 14px 8px;
+
+    text-align: center;
+
+    transition: 0.2s ease;
+
+}
+
+
+.quick:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(108, 180, 223, 0.45);
+
+}
+
+
+.quick.active {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--blue),
+            #559fc8
+        );
+
+    color: #071016;
+
+    border-color: transparent;
+
+}
+
+
+.q-icon {
+
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.quick strong,
+.quick small {
+
+    display: block;
+
+}
+
+
+.quick strong {
+
+    font-size: 12px;
+
+}
+
+
+.quick small {
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    opacity: 0.72;
+
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-card {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(108, 180, 223, 0.15),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border:
+        1px solid
+        rgba(108, 180, 223, 0.2);
+
+    border-radius: 24px;
+
+    padding: 27px 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 16px 40px
+        rgba(0, 0, 0, 0.2);
+
+}
+
+
+.eyebrow {
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 800;
+
+}
+
+
+.hero-card h2 {
+
+    margin-top: 14px;
+
+    font-size: 23px;
+
+    line-height: 1.15;
+
+}
+
+
+.hero-card p {
+
+    margin-top: 7px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.hero-card .line {
+
+    height: 1px;
+
+    width: 55px;
+
+    background: var(--blue);
+
+    margin:
+
+        18px
+        auto
+        13px;
+
+}
+
+
+.hero-card > span {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* =========================================
+   SERVIÇOS
+========================================= */
+
+.services {
+
+    padding-top: 27px;
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+}
+
+
+.section-title span:first-child {
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-weight: 800;
+
+}
+
+
+.section-title h2 {
+
+    margin-top: 4px;
+
+    font-size: 22px;
+
+}
+
+
+.service-count {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+
+/* =========================================
+   GRID DE SERVIÇOS
+========================================= */
+
+.service-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+}
+
+
+.service-card,
+.accessory-card {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 17px;
+
+}
+
+
+.service-card {
+
+    padding: 16px;
+
+    min-height: 112px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.service-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(108, 180, 223, 0.3);
+
+}
+
+
+.service-card > span {
+
+    display: block;
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.service-card strong,
+.service-card small {
+
+    display: block;
+
+}
+
+
+.service-card strong {
+
+    font-size: 13px;
+
+}
+
+
+.service-card small {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.35;
+
+    margin-top: 4px;
+
+}
+
+
+
+/* =========================================
+   ACESSÓRIOS
+========================================= */
+
+.accessory-card {
+
+    margin-top: 10px;
+
+    padding: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.accessory-card > span {
+
+    font-size: 25px;
+
+}
+
+
+.accessory-card strong {
+
+    font-size: 13px;
+
+}
+
+
+.accessory-card small {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+}
+
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta-card {
+
+    margin-top: 25px;
+
+    padding: 17px;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #6cb4df,
+            #3f91bd
+        );
+
+    color: #071016;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    box-shadow:
+
+        0 15px 30px
+        rgba(63, 145, 189, 0.18);
+
+}
+
+
+.cta-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 13px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    font-size: 21px;
+
+}
+
+
+.cta-card span,
+.cta-card h2,
+.cta-card p {
+
+    display: block;
+
+}
+
+
+.cta-card span {
+
+    font-size: 10px;
+
+    opacity: 0.75;
+
+    font-weight: 700;
+
+}
+
+
+.cta-card h2 {
+
+    font-size: 17px;
+
+    margin-top: 2px;
+
+}
+
+
+.cta-card p {
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+    opacity: 0.72;
+
+}
+
+
+.cta-card a {
+
+    margin-left: auto;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+}
+
+
+
+/* =========================================
+   LINKS GRANDES
+========================================= */
+
+.links {
+
+    margin-top: 15px;
+
+}
+
+
+.big-link {
+
+    width: 100%;
+
+    min-height: 68px;
+
+    margin-bottom: 9px;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    text-decoration: none;
+
+    color: var(--white);
+
+    background: var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 17px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    transition: 0.2s ease;
+
+}
+
+
+.big-link:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(108, 180, 223, 0.35);
+
+}
+
+
+.big-link > span {
+
+    width: 39px;
+
+    height: 39px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(108, 180, 223, 0.1);
+
+    color: var(--blue);
+
+    font-size: 21px;
+
+}
+
+
+.big-link div {
+
+    flex: 1;
+
+}
+
+
+.big-link strong,
+.big-link small {
+
+    display: block;
+
+}
+
+
+.big-link strong {
+
+    font-size: 13px;
+
+}
+
+
+.big-link small {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+}
+
+
+.big-link > b {
+
+    color: #59616a;
+
+    font-size: 23px;
+
+}
+
+
+.big-link.whatsapp {
+
+    border-color:
+        rgba(108, 180, 223, 0.35);
+
+}
+
+
+.big-link.whatsapp > span {
+
+    background: var(--blue);
+
+    color: #071016;
+
+}
+
+
+
+/* =========================================
+   TOAST DO PIX
+========================================= */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform:
+        translate(-50%, 20px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background: #fff;
+
+    color: #111;
+
+    padding:
+        12px 17px;
+
+    border-radius: 99px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.4);
+
+    transition: 0.25s ease;
+
+    z-index: 10;
+
+    white-space: nowrap;
+
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+
+/* =========================================
+   WHATSAPP FLUTUANTE
+========================================= */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 54px;
+
+    height: 54px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    color: #071016;
+
+    text-decoration: none;
+
+    font-size: 26px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.35);
+
+    z-index: 8;
+
+    animation:
+        pulse 2.2s infinite;
+
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 8px 25px
+            rgba(0, 0, 0, 0.35),
+            0 0 0 0
+            rgba(108, 180, 223, 0.35);
+
+    }
+
+
+    50% {
+
+        box-shadow:
+            0 8px 25px
+            rgba(0, 0, 0, 0.35),
+            0 0 0 10px
+            rgba(108, 180, 223, 0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        24px 0
+        5px;
+
+}
+
+
+footer strong,
+footer span,
+footer small {
+
+    display: block;
+
+}
+
+
+footer strong {
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+footer span {
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+}
+
+
+footer small {
+
+    color: #59616a;
+
+    font-size: 9px;
+
+    margin-top: 8px;
+
+}
+
+
+
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 390px) {
+
+    .app {
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+    }
+
+
+    .service-card {
+
+        padding: 14px;
+
+    }
+
+
+    .hero-card h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .logo-wrap {
+
+        width: 86px;
+
+        height: 86px;
+
+    }
+
+}
+/* =========================================
+   MOLDURA PRINCIPAL - GABTECH BIO APP
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(108, 180, 223, 0.10),
+            transparent 40%
+        ),
+        #05080b;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Moldura do aplicativo */
+
+.app-container {
+    width: 100%;
+    max-width: 460px;
+
+    min-height: calc(100vh - 50px);
+
+    padding: 30px 22px;
+
+    background: #080d12;
+
+    border: 1.5px solid #6cb4df;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 15px rgba(108, 180, 223, 0.15),
+        0 0 45px rgba(108, 180, 223, 0.08);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Brilho interno sutil */
+
+.app-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: -150px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(108, 180, 223, 0.06);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+/* Mantém o conteúdo acima do efeito */
+
+.app-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .app-container {
+        min-height: calc(100vh - 20px);
+
+        padding: 25px 18px;
+
+        border-radius: 24px;
+    }
+}
+
+/* =========================================
+   BOTÕES RÁPIDOS - GRID 2x2
+========================================== */
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.quick {
+    width: 100%;
+    min-height: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+/* Ajuste do texto dos botões */
+
+.quick strong {
+    display: block;
+    margin-top: 6px;
+}
+
+.quick small {
+    display: block;
+    margin-top: 3px;
+}
+
+/* =========================================
+   RESPONSIVIDADE GERAL - GABTECH
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Aplicativo */
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Botões rápidos */
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+.quick {
+    width: 100%;
+    min-width: 0;
+}
+
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .app-container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .quick-actions {
+        gap: 8px;
+    }
+
+    .quick {
+        min-height: 82px;
+        padding: 10px 6px;
+    }
+
+    .quick strong {
+        font-size: 13px;
+    }
+
+    .quick small {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (min-width: 361px) and (max-width: 600px) {
+
+    .app-container {
+        width: 100%;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    body {
+        padding: 24px;
+    }
+
+    .app-container {
+        max-width: 520px;
+    }
+
+    .quick-actions {
+        gap: 14px;
+    }
+}
+
+
+/* =========================================
+   COMPUTADORES
+========================================= */
+
+@media (min-width: 1025px) {
+
+    body {
+        padding: 30px 20px;
+    }
+
+    .app-container {
+        max-width: 480px;
+    }
+}
+
+
+/* =========================================
+   IMAGENS
+========================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   EVITA TEXTOS ESTOURAREM
+========================================= */
+
+h1,
+h2,
+h3,
+p,
+strong,
+small,
+span {
+    overflow-wrap: break-word;
+}
