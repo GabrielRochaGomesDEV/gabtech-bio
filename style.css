@@ -1405,3 +1405,342 @@ small,
 span {
     overflow-wrap: break-word;
 }
+
+/* =========================================
+   MODAL - VENDA SEU CELULAR
+========================================= */
+
+.modal-venda {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    align-items: center;
+
+    justify-content: center;
+
+    backdrop-filter: blur(5px);
+}
+
+.modal-venda.ativo {
+    display: flex;
+}
+
+
+.modal-venda-box {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 520px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    background: #111111;
+
+    border: 1px solid rgba(108, 180, 223, 0.35);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(108, 180, 223, 0.08);
+
+    animation: abrirModalVenda 0.25s ease;
+}
+
+
+@keyframes abrirModalVenda {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* TÍTULO */
+
+.modal-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 24px;
+}
+
+
+.modal-icone {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(108, 180, 223, 0.12);
+
+    border: 1px solid rgba(108, 180, 223, 0.3);
+
+    font-size: 23px;
+}
+
+
+.modal-titulo h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+
+.modal-titulo p {
+
+    margin: 4px 0 0;
+
+    color: #9c9c9c;
+
+    font-size: 13px;
+}
+
+
+/* FECHAR */
+
+.modal-fechar {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    width: 34px;
+
+    height: 34px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.07);
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.modal-fechar:hover {
+
+    background: rgba(108,180,223,0.2);
+
+    transform: rotate(90deg);
+}
+
+
+/* CAMPOS */
+
+.campo {
+
+    margin-bottom: 15px;
+}
+
+
+.campo label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #dddddd;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.campo input,
+.campo select,
+.campo textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 13px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    background: rgba(255,255,255,0.05);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+
+    color: #777777;
+}
+
+
+.campo select option {
+
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+
+    border-color: #6cb4df;
+
+    box-shadow: 0 0 0 2px rgba(108,180,223,0.10);
+}
+
+
+/* DOIS CAMPOS */
+
+.linha-campos {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* BOTÃO */
+
+.btn-enviar-venda {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 8px;
+
+    padding: 14px 17px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background: #6cb4df;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-enviar-venda strong {
+
+    font-size: 20px;
+}
+
+
+.btn-enviar-venda:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 25px rgba(108,180,223,0.2);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .modal-venda {
+
+        padding: 12px;
+
+        align-items: flex-end;
+    }
+
+
+    .modal-venda-box {
+
+        max-height: 92vh;
+
+        padding: 23px 18px;
+
+        border-radius: 20px 20px 15px 15px;
+    }
+
+
+    .linha-campos {
+
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    .modal-titulo h2 {
+
+        font-size: 20px;
+    }
+
+}

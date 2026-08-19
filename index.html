@@ -105,44 +105,49 @@
 
 
     <!-- ACOMPANHAR REPARO -->
-    <a href="https://wa.me/5511950212232?text=Olá%20Gabtech!%20Gostaria%20de%20vender%20meu%20celular."
-       target="_blank"
-       class="quick">
+   <!-- ACOMPANHAR REPARO -->
+<a href="https://app.osfacil.net/consulta"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="quick">
 
-        <span class="q-icon">
-            🔎
-        </span>
+    <span class="q-icon">
+        🔎
+    </span>
 
-        <strong>
-            Meu Reparo
-        </strong>
+    <strong>
+        Meu Reparo
+    </strong>
 
-        <small>
-            Acompanhe sua OS
-        </small>
+    <small>
+        Acompanhe sua OS
+    </small>
 
-    </a>
+</a>
 
+<!-- VENDA SEU CELULAR -->
+<a href="#"
+   class="quick"
+   onclick="
+       document.getElementById('modalVenda').style.display = 'flex';
+       document.body.style.overflow = 'hidden';
+       return false;
+   ">
 
-    <!-- VENDA SEU CELULAR -->
-    <a href="https://wa.me/5511950212232?text=Olá%20Gabtech!%20Gostaria%20de%20vender%20meu%20celular."
-       target="_blank"
-       class="quick">
+    <span class="q-icon">
+        📱
+    </span>
 
-        <span class="q-icon">
-            📱
-        </span>
+    <strong>
+        Venda seu Celular
+    </strong>
 
-        <strong>
-            Venda Seu Celular
-        </strong>
+    <small>
+        Faça uma avaliação
+    </small>
 
-        <small>
-            Avalie seu aparelho
-        </small>
-
-    </a>
-
+</a>
+ 
 
     <!-- PRODUTOS E ACESSÓRIOS -->
     <a href="https://wa.me/5511950212232?text=Olá%20Gabtech!%20Gostaria%20de%20vender%20meu%20celular."
@@ -624,6 +629,217 @@
 
 
     <script src="script.js"></script>
+
+<!-- MODAL VENDA SEU CELULAR -->
+<!-- MODAL VENDA SEU CELULAR -->
+<div id="modalVenda" class="modal-venda">
+
+    <div class="modal-venda-box">
+
+        <button
+    type="button"
+    class="modal-fechar"
+    onclick="
+        document.getElementById('modalVenda').style.display = 'none';
+        document.body.style.overflow = '';
+    ">
+    ×
+</button>
+
+        <div class="modal-titulo">
+
+            <div class="modal-icone">
+                📱
+            </div>
+
+            <div>
+                <h2>Venda seu Celular</h2>
+                <p>
+                    Faça uma avaliação do seu aparelho
+                </p>
+            </div>
+
+        </div>
+
+        <form id="formVendaCelular" onsubmit="enviarVendaWhatsApp(event)">
+
+            <div class="campo">
+
+                <label>Modelo do aparelho</label>
+
+                <input
+                    type="text"
+                    id="vendaModelo"
+                    placeholder="Ex.: iPhone 13, Galaxy S23..."
+                    required>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>Armazenamento</label>
+
+                <select id="vendaArmazenamento" required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>32 GB</option>
+                    <option>64 GB</option>
+                    <option>128 GB</option>
+                    <option>256 GB</option>
+                    <option>512 GB</option>
+                    <option>1 TB</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>Estado do aparelho</label>
+
+                <select id="vendaEstado" required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>Excelente</option>
+                    <option>Muito bom</option>
+                    <option>Bom</option>
+                    <option>Com marcas de uso</option>
+                    <option>Danificado</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>Saúde da bateria</label>
+
+                <input
+                    type="text"
+                    id="vendaBateria"
+                    placeholder="Ex.: 87% ou Não sei">
+
+            </div>
+
+
+            <div class="linha-campos">
+
+                <div class="campo">
+
+                    <label>Possui caixa?</label>
+
+                    <select id="vendaCaixa" required>
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option>Sim</option>
+                        <option>Não</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>Possui carregador?</label>
+
+                    <select id="vendaCarregador" required>
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option>Sim</option>
+                        <option>Não</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>Já foi reparado?</label>
+
+                <select id="vendaReparo" required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>Não</option>
+                    <option>Sim</option>
+                    <option>Não sei informar</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>Valor que deseja receber</label>
+
+                <input
+                    type="text"
+                    id="vendaValor"
+                    placeholder="Ex.: R$ 1.500">
+
+            </div>
+
+            <div class="campo">
+
+    <label>Cidade / Região</label>
+
+    <input
+        type="text"
+        id="vendaCidade"
+        placeholder="Ex.: Jundiaí - SP">
+
+</div>
+
+
+            <div class="campo">
+
+                <label>Observações</label>
+
+                <textarea
+                    id="vendaObservacoes"
+                    placeholder="Conte algo importante sobre o aparelho..."
+                    rows="3"></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn-enviar-venda">
+
+                <span>ENVIAR PARA A GABTECH</span>
+
+                <strong>→</strong>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 </body>
 
